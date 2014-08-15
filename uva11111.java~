@@ -1,0 +1,36 @@
+import java.util.*;
+public class uva11111{
+        public static void main(String[] args){
+                boolean test=true;
+                Scanner sc = new Scanner(System.in);
+        //      ArrayList al=new ArrayList();
+                // sc.useDelimiter(System.getProperty("line.separator"));
+                String temp=sc.nextLine();
+                String[] str = temp.split(" ");
+
+                int[] intSet = new int[str.length];
+                for(int m=0;m<str.length;m++)
+                        intSet[m]=Integer.parseInt(str[m]);
+        //      al.add(intSet);
+                if(test)System.out.println(Arrays.toString(intSet));
+
+//              if(test)
+//                      System.out.println(al);
+
+                Stack<Integer> st1 = new Stack<Integer>();
+                Stack<Integer> st2 = new Stack<Integer>();
+
+                for(int i=0;i<intSet.length;i++){
+                        int cur = intSet[i];
+
+                        if(st1.search(-cur)==-1)////// does not find oppo of cur
+                                st1.push(cur);
+                        else
+                                st2.push(cur);
+                }
+                if(test){
+                        System.out.println(st1);
+                        System.out.println(st2);
+                }
+        }
+}
